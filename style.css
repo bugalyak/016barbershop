@@ -981,47 +981,88 @@ footer {
   }
 }
 
-/* ======= Телефоны (до 576px) ======= */
-@media (max-width: 576px) {
-  body {
-    font-size: 14px;
+/* ======= АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ======= */
+@media (max-width: 768px) {
+
+  /* ХЭДЕР */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 0 16px;
+    justify-content: space-between;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px);
+    z-index: 1000;
   }
 
-  h1 { font-size: 24px; }
-  h2 { font-size: 20px; }
-  h3 { font-size: 18px; }
-
-  section {
-    padding: 40px 16px;
+  header .desktop-nav {
+    display: none; /* убираем навигацию */
   }
 
-  .hero {
-    min-height: 80vh;
-    padding: 40px 20px;
+  /* ABOUT */
+  .about-container {
+    flex-direction: column;
     text-align: center;
-    background-position: top center;
+    gap: 20px;
   }
-  .hero .btn {
+
+  .about-img {
+    order: -1; /* фото сверху */
     width: 100%;
+    height: 300px;
+    margin: 0 auto;
+    border-radius: 12px;
+  }
+
+  .about-text {
+    padding: 0 12px;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  /* МАСТЕРА */
+  .masters .swiper-button-prev,
+  .masters .swiper-button-next {
+    display: none !important; /* скрываем стрелки */
+  }
+
+  /* ОТЗЫВЫ */
+  .reviews .review-card {
+    padding: 16px;
+    font-size: 0.9rem;
     max-width: 280px;
-    margin: 12px auto;
+    margin: 0 auto 20px;
   }
 
-  .about img {
-    max-width: 100%;
+  /* КОНТАКТЫ */
+  .contact-container {
+    flex-direction: column;
+    gap: 20px;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .contact-info {
+    order: -1; /* инфо сверху */
+  }
+
+  .contact-info .info-card {
+    padding: 12px;
+    font-size: 0.9rem;
   }
 
   .contact-map {
-    height: 280px;
+    width: 100%;
+    height: 300px;
+    border-radius: 12px;
+    overflow: hidden;
   }
+}
+
 
   footer {
     text-align: center;
     padding: 20px;
   }
-}
+
