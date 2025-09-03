@@ -981,85 +981,80 @@ footer {
   }
 }
 
-/* ======= АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ======= */
+/* ======= МОБИЛЬНАЯ АДАПТАЦИЯ (фикс) ======= */
 @media (max-width: 768px) {
 
-  /* ХЭДЕР */
+  /* ХЭДЕР — убираем навигацию */
+  header .desktop-nav,
+  header .mobile-nav {
+    display: none !important;
+  }
+
   header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 60px;
-    padding: 0 16px;
-    justify-content: space-between;
-    background: rgba(0, 0, 0, 0.85);
+    position: fixed !important;
+    top: 0; left: 0; right: 0;
+    height: 60px !important;
+    padding: 0 16px !important;
+    background: rgba(0, 0, 0, 0.9) !important;
     backdrop-filter: blur(8px);
-    z-index: 1000;
+    z-index: 1000 !important;
+    justify-content: space-between !important;
   }
 
-  header .desktop-nav {
-    display: none; /* убираем навигацию */
-  }
-
-  /* ABOUT */
+  /* ABOUT — картинка сверху */
   .about-container {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
+    flex-direction: column !important;
+    text-align: center !important;
   }
 
   .about-img {
-    order: -1; /* фото сверху */
-    width: 100%;
-    height: 300px;
-    margin: 0 auto;
-    border-radius: 12px;
+    display: block !important;
+    order: -1 !important;
+    width: 100% !important;
+    height: 250px !important;
+    margin: 0 auto 20px !important;
+    border-radius: 12px !important;
+    background-size: cover !important;
+    background-position: center !important;
   }
 
-  .about-text {
-    padding: 0 12px;
-    font-size: 0.95rem;
-    line-height: 1.6;
+  /* МАСТЕРА — убираем стрелки */
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none !important;
   }
 
-  /* МАСТЕРА */
-  .masters .swiper-button-prev,
-  .masters .swiper-button-next {
-    display: none !important; /* скрываем стрелки */
+  /* ОТЗЫВЫ — делаем карточки меньше */
+  .review-card {
+    max-width: 280px !important;
+    margin: 0 auto 20px !important;
+    padding: 16px !important;
+    font-size: 0.9rem !important;
   }
 
-  /* ОТЗЫВЫ */
-  .reviews .review-card {
-    padding: 16px;
-    font-size: 0.9rem;
-    max-width: 280px;
-    margin: 0 auto 20px;
-  }
-
-  /* КОНТАКТЫ */
+  /* КОНТАКТЫ — компактные карточки + карта больше */
   .contact-container {
-    flex-direction: column;
-    gap: 20px;
+    flex-direction: column !important;
+    gap: 20px !important;
   }
 
   .contact-info {
-    order: -1; /* инфо сверху */
+    order: -1 !important;
+    width: 100% !important;
   }
 
   .contact-info .info-card {
-    padding: 12px;
-    font-size: 0.9rem;
+    padding: 12px !important;
+    font-size: 0.9rem !important;
   }
 
   .contact-map {
-    width: 100%;
-    height: 300px;
-    border-radius: 12px;
-    overflow: hidden;
+    width: 100% !important;
+    height: 300px !important;
+    border-radius: 12px !important;
+    overflow: hidden !important;
   }
 }
-
 
   footer {
     text-align: center;
